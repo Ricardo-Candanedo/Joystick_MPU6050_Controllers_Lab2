@@ -17,8 +17,6 @@ int noise = 0;
 void setup() {
     pinMode(buzzer_output, OUTPUT);
     Serial.begin(9600);
-
-    // I2C Communication
     Wire.begin();
     mpu.begin();
     mpu.calcGyroOffsets(true);
