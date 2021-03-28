@@ -121,13 +121,13 @@ while True:
     controller = control_read.rstrip()
     print(controller)
     if controller == 'w':
-        head.direction = "up"
+        go_up()
     elif controller == 's':
-        head.direction = "down"
+        go_down()
     elif controller == 'a':
-        head.direction = "left"
+        go_left()
     elif controller == 'd':
-        head.direction = "right"
+        go_right()
 
     # Check for a collision with the border
     if head.xcor()>290 or head.xcor()<-290 or head.ycor()>290 or head.ycor()<-290:
