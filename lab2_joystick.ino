@@ -32,22 +32,22 @@ if (Serial.available() > 0) {
 }
 
 // This section is for the y-axis of the joystick: "w" and "s"
-  if (analogRead(Y_pin) > 1000) {
+  if (analogRead(Y_pin) > 1000 && analogRead(Y_pin) > analogRead(X_pin)) {
       Serial.println('s');
       delay(200);
     }
-  else if (analogRead(Y_pin) < 100){
+  else if (analogRead(Y_pin) < 100 && analogRead(Y_pin) < analogRead(X_pin)){
       Serial.println('w');
       delay(200);
     }
 
 // This section is for the y-axis of the joystick: "d" and "a"
-  if (analogRead(X_pin) > 1000) {
-      Serial.println('a');
+  if (analogRead(X_pin) > 1000 && analogRead(X_pin) > analogRead(Y_pin)) {
+      Serial.println('d');
       delay(200);
     }
-  else if (analogRead(X_pin) < 100){
-      Serial.println('d');
+  else if (analogRead(X_pin) < 100 && analogRead(X_pin) < analogRead(Y_pin)){
+      Serial.println('a');
       delay(200);
     }
 }
